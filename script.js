@@ -7,15 +7,16 @@ const body = document.querySelector("body")
 for (let i = 0; i < btn.length; i++) {
  btn[i].addEventListener('click', function () {
   if (this.innerHTML == "=") {
-   value.innerHTML = eval(value.innerHTML)
+   value.innerHTML = eval(value.innerHTML);
+  } else if (this.innerHTML == "Clear") {
+   value.innerHTML = "";
+  } else if (this.innerHTML == "%") {
+   value.innerHTML = eval(value.innerHTML) / 100;
   } else {
-   if (this.innerHTML == "Clear") {
-    value.innerHTML = "";
-   } else {
-    value.innerHTML += this.innerHTML
-   }
+   value.innerHTML += this.innerHTML;
   }
- })
+ });
+
 }
 
 toggleBtm.onclick = function(){
@@ -23,5 +24,3 @@ toggleBtm.onclick = function(){
 }
 
 
-
-//https://youtu.be/t6jxqGQduWk
